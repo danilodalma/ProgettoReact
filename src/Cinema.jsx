@@ -22,17 +22,15 @@ export default function Cinema() {
     if (
       !titoloFilm.trim() ||
       !sala.trim() ||
-      !categoria.trim() ||
-      !prezzo.trim() ||
-      !data.trim()
+      !categoria.trim() 
     )
       return;
     const nuovoFilm = {
       titoloFilm: titoloFilm.trim(),
       sala: sala.trim(),
       categoria: categoria.trim(),
-      prezzo: prezzo.trim(),
-      data: data.trim(),
+      prezzo: prezzo,
+      data: data,
     };
 
     if (modalitaModifica) {
