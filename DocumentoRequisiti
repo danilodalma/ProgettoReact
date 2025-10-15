@@ -11,3 +11,11 @@ film per titolo, luogo della sala, categoria del film prezzo del film e data di 
 una funzione che permetterà di vedere tutti i film che devono essere riprodotti. Parteciperanno a
 questo progetto Danilo D’ Alma, Federico Pavone, Marco Buccini, Alessandro Falchi, Francesco
 Zerra.
+
+===== Campi del record
+   - id_film        - Indice gestito automaticamente dal localStorage, tipo numerico
+   - Titolo         - Titoo del film in riproduzione, di tipo stringa
+   - Sala           - Sala dove il film è in riproduzione, di tipo stringa
+   - Categoria      - Categoria del film in riproduzione, di tipo stringa
+   - Prezzo         - Prezzo del biglietto, di tipo numerico (nel frontend verrà visualizzato come stringa)
+   - Data           - Data di riproduzione del film, cioè quando verrà trasmesso, di tipo data (nel frontend verrà visualizzato come stringa)
