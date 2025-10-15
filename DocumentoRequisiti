@@ -19,3 +19,10 @@ Zerra.
    - Categoria      - Categoria del film in riproduzione, di tipo stringa
    - Prezzo         - Prezzo del biglietto, di tipo numerico (nel frontend verrà visualizzato come stringa)
    - Data           - Data di riproduzione del film, cioè quando verrà trasmesso, di tipo data (nel frontend verrà visualizzato come stringa)
+
+
+-task 1: lista
+-task 2: inserimento eventi,data
+-task 3: modificare/cancellare evento
+-task 4: filtro/ricerca eventi
+-task 5: salvare l'evento tra i preferiti (creare un array di eventi selezionati come preferiti, aggiungere pulsante per esportare)  
