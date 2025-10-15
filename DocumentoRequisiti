@@ -1,0 +1,13 @@
+Creeremo un programma per gestire un gestionale di sale cinema. L’ obiettivo è salvare I dati in
+locale per poter modificare e gestire I vari film in riproduzione. Il programma verrà scritto in React e
+Javascript. Ciò che farà il programma è salvare una lista di eventi in local storage e in questa lista
+potranno essere inseriti eventi che potranno essere visualizzati ed eliminati. Avremmo pure un
+filtro che permetta di cercare eventi in base al titolo luogo categoria prezzo o data, oltre a ciò
+salverà automaticamente i dati nel local storage ed importerà ed esporterà l’ elenco degli eventi nel
+formato JSON.
+Avremmo bisogno di più funzioni crud che permetteranno di modificare la lista di eventi.
+Oltre a ciò avremmo bisogno di un filtro di ricerca che tramite parole chiavi ci farà visualizzare I vari
+film per titolo, luogo della sala, categoria del film prezzo del film e data di riproduzione. Oltre a ciò
+una funzione che permetterà di vedere tutti i film che devono essere riprodotti. Parteciperanno a
+questo progetto Danilo D’ Alma, Federico Pavone, Marco Buccini, Alessandro Falchi, Francesco
+Zerra.
