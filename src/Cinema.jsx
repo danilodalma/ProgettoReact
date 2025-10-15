@@ -17,6 +17,9 @@ export default function Cinema() {
   const [modalitaModifica, setModalitaModifica] = useState(false);
   const [indiceModifica, setIndiceModifica] = useState(null);
 
+    // state per ricerca filtrata e messaggi di ricerca
+  const [filmFiltrati, setFilmFiltrati] = useState([]);
+
   //funzioni
   function aggiungiFilm() {
     if (
@@ -68,6 +71,50 @@ export default function Cinema() {
     setData("");
   }
 
+  //  funzione per ricerca film
+  function ricercaFilm() {
+    // Controlla se tutti i campi sono vuoti
+    if (!titoloFilm && !sala && !categoria && !prezzo && !data) {
+      setFilmFiltrati([]);
+      setMessaggio("Inserire almeno un criterio di ricerca");
+      return;
+    }
+
+    const risultati = listaFilm.filter(
+      (film) =>
+        film.titoloFilm.toLowerCase().includes(titoloFilm.toLowerCase()) &&
+        film.sala.toLowerCase().includes(sala.toLowerCase()) &&
+        film.categoria.toLowerCase().includes(categoria.toLowerCase()) &&
+        film.prezzo.toLowerCase().includes(prezzo.toLowerCase()) &&
+        film.data.toLowerCase().includes(data.toLowerCase())
+    );
+
+    setFilmFiltrati(risultati);
+
+    if (risultati.length === 0) {
+      setMessaggio("Nessun film trovato");
+    } else {
+      setMessaggio("");
+    }
+  }
+
+  // funzione per resettare la ricerca e mostrare tutti i film
+  function resetRicerca() {
+    setFilmFiltrati([]);
+    setMessaggio("");
+    pulisciCampi();
+  }
+
+      function eliminaFilm(index) {
+        if (window.confirm("Eliminare questo film?")) {
+          setListaFilm((arrayPrecedentementeSalvato) =>
+            arrayPrecedentementeSalvato.filter((_, i) => i !== index)
+          );
+        }
+        setModalitaModifica(false);
+        pulisciCampi();
+      }
+
   return (
     <div>
       <div>{messaggio}</div>
@@ -113,6 +160,9 @@ export default function Cinema() {
         ) : (
           <button onClick={aggiungiFilm}>Aggiungi film</button>
         )}
+        {/* Bottone per ricerca film */}
+        <button onClick={ricercaFilm}>Ricerca film</button>
+        <button onClick={resetRicerca}>Reset ricerca</button>
       </div>
       <table border="1" style={{ padding: "10px" }}>
         <thead>
@@ -126,19 +176,37 @@ export default function Cinema() {
           </tr>
         </thead>
         <tbody>
-          {listaFilm.map((film, indice) => (
-            <tr key={indice}>
-              <td>{film.titoloFilm}</td>
-              <td>{film.sala}</td>
-              <td>{film.categoria}</td>
-              <td>{film.prezzo}</td>
-              <td>{film.data}</td>
-              <td>
-                <button onClick={() => modificaFilm(indice)}>Modifica</button>
-                <button>Elimina</button>
-              </td>
-            </tr>
-          ))}
+          {/* Film filtrati */}
+          {filmFiltrati.length > 0 &&
+            filmFiltrati.map((film, indice) => (
+              <tr key={indice}>
+                <td>{film.titoloFilm}</td>
+                <td>{film.sala}</td>
+                <td>{film.categoria}</td>
+                <td>{film.prezzo}</td>
+                <td>{film.data}</td>
+                <td>
+                  <button onClick={() => modificaFilm(indice)}>Modifica</button>
+                  <button>Elimina</button>
+                </td>
+              </tr>
+            ))}
+
+          {/* Lista completa se nessuna ricerca attiva */}
+          {filmFiltrati.length === 0 &&
+            listaFilm.map((film, indice) => (
+              <tr key={indice}>
+                <td>{film.titoloFilm}</td>
+                <td>{film.sala}</td>
+                <td>{film.categoria}</td>
+                <td>{film.prezzo}</td>
+                <td>{film.data}</td>
+                <td>
+                  <button onClick={() => modificaFilm(indice)}>Modifica</button>
+                  <button onClick={() => eliminaFilm(indice)}>Elimina</button>
+                </td>
+              </tr>
+            ))}
         </tbody>
       </table>
     </div>
