@@ -9,6 +9,9 @@
 ### - Operazioni CRUD per aggiungere modificare eliminare e visualizzare i dati salvati 
 ### - Filtro di ricerca 
 
+## note: Non siamo riusciti, per via del tempo, a completare il task del salva preferiti. Tuttavia avevamo concepito l'idea dell'implementazione di un flag booleano che avrebbe indicato se il film era preferito = true se non era preferito = false
+
+
 ## 1.3 Task
 
 ### - Lista
@@ -16,6 +19,8 @@
 ### - Modificare o cancellare eventi
 ### - Filtro ricerca eventi
 ### - Salvare l'evento tra i preferiti
+
+
 
 ## Partecipanti:
 ### - Federico Pavone
