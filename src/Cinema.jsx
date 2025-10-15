@@ -16,6 +16,19 @@ const [prezzo,setPrezzo] = useState("");
 const [data,setData] = useState("");
 
 
+//funzioni
+function aggiungiFilm(){
+    if(!titoloFilm.trim() || !sala.trim() || !categoria.trim() || !prezzo.trim() || !data.trim())return;
+    const nuovoFilm = {
+        titoloFilm: titoloFilm.trim(),
+        sala: sala.trim(),
+        categoria: categoria.trim(),
+        prezzo: prezzo.trim(),
+        data: data.trim()
+    }
+}
+
+
 return (
 <div>
   <input type="text" value={titoloFilm} placeholder="Inserisci titolo" onChange={(e) => setTitoloFilm(e.target.value)} required />
@@ -24,7 +37,7 @@ return (
   <input type="text" value={prezzo} placeholder="Inserisci prezzo" onChange={(e) => setPrezzo(e.target.value)} required />
   <input type="text" value={data} placeholder="Inserisci data" onChange={(e) => setData(e.target.value)} required />
 
- <button>Aggiungi film</button>
+ <button onClick= {aggiungiFilm}>Aggiungi film</button>
     
 <table border="1" style={{"padding":"10px"}}>
 <thead>
