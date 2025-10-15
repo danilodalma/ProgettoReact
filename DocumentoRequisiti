@@ -1,28 +1,25 @@
-Creeremo un programma per gestire un gestionale di sale cinema. L’ obiettivo è salvare I dati in
-locale per poter modificare e gestire I vari film in riproduzione. Il programma verrà scritto in React e
-Javascript. Ciò che farà il programma è salvare una lista di eventi in local storage e in questa lista
-potranno essere inseriti eventi che potranno essere visualizzati ed eliminati. Avremmo pure un
-filtro che permetta di cercare eventi in base al titolo luogo categoria prezzo o data, oltre a ciò
-salverà automaticamente i dati nel local storage ed importerà ed esporterà l’ elenco degli eventi nel
-formato JSON.
-Avremmo bisogno di più funzioni crud che permetteranno di modificare la lista di eventi.
-Oltre a ciò avremmo bisogno di un filtro di ricerca che tramite parole chiavi ci farà visualizzare I vari
-film per titolo, luogo della sala, categoria del film prezzo del film e data di riproduzione. Oltre a ciò
-una funzione che permetterà di vedere tutti i film che devono essere riprodotti. Parteciperanno a
-questo progetto Danilo D’ Alma, Federico Pavone, Marco Buccini, Alessandro Falchi, Francesco
-Zerra.
+# Documento Requisiti progetto Cinema
 
-===== Campi del record
-   - id_film        - Indice gestito automaticamente dal localStorage, tipo numerico
-   - Titolo         - Titoo del film in riproduzione, di tipo stringa
-   - Sala           - Sala dove il film è in riproduzione, di tipo stringa
-   - Categoria      - Categoria del film in riproduzione, di tipo stringa
-   - Prezzo         - Prezzo del biglietto, di tipo numerico (nel frontend verrà visualizzato come stringa)
-   - Data           - Data di riproduzione del film, cioè quando verrà trasmesso, di tipo data (nel frontend verrà visualizzato come stringa)
+## 1.1 Premessa
+### Creare un programma che salva dati in locale per poter modificare e gestire i vari film in riproduzione e visualizzarne la lista 
 
+## 1.2 Requisiti
+### Scriveremo il nostro programma in javascript tramite progetto angular che ci permetterà di :
+### - Salvare i dati in locale 
+### - Operazioni CRUD per aggiungere modificare eliminare e visualizzare i dati salvati 
+### - Filtro di ricerca 
 
--task 1: lista
--task 2: inserimento eventi,data
--task 3: modificare/cancellare evento
--task 4: filtro/ricerca eventi
--task 5: salvare l'evento tra i preferiti (creare un array di eventi selezionati come preferiti, aggiungere pulsante per esportare)  
+## 1.3 Task
+
+### - Lista
+### - Inserimento eventi, data
+### - Modificare o cancellare eventi
+### - Filtro ricerca eventi
+### - Salvare l'evento tra i preferiti
+
+## Partecipanti:
+### - Federico Pavone
+### - Francesco Zara
+### - Danilo D'alma
+### - Alessandro Falchi
+### - Marco Buccini
